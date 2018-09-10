@@ -342,7 +342,9 @@ td {
 .container {
   max-width: 1200px;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px; }
 
 a {
   color: #083887; }
@@ -372,30 +374,60 @@ body {
 .Header {
   border-bottom: 1px solid #ddd; }
   .Header .container {
+    position: relative;
     display: flex;
     align-items: center;
     height: 64px; }
   .Header-logo img {
     width: 144px; }
+  .Header-switch {
+    margin-left: auto; }
+    @media (min-width: 768px) {
+      .Header-switch {
+        display: none; } }
   .Header-menu {
-    margin-left: auto;
-    display: flex; }
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background-color: #ccc;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px; }
+    @media (min-width: 768px) {
+      .Header-menu {
+        display: flex;
+        margin-left: auto; } }
     .Header-menu-user {
       display: flex;
-      margin-right: 10px; }
+      margin-right: 10px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
       .Header-menu-user a {
+        width: 100%;
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         padding-left: 20px;
         padding-right: 20px;
         height: 40px; }
         .Header-menu-user a:hover {
           background-color: #eee; }
-    .Header-menu-switch {
-      color: blue; }
+    .Header-menu-property {
+      margin-top: 20px;
+      justify-content: center; }
     .Header-menu-helper {
+      margin-top: 20px;
       display: flex;
-      margin-left: 20px; }
+      justify-content: center; }
+      @media (min-width: 768px) {
+        .Header-menu-helper {
+          margin-left: 20px; } }
       .Header-menu-helper select {
         -webkit-appearance: none;
         border: 1px solid #E0E6F1;
