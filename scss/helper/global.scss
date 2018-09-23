@@ -29,16 +29,27 @@ button {
   background-color: transparent;
 }
 
+
+.select, .button, .text {
+  border:0;
+  width: 100%;
+  font-family: inherit;
+  border-radius: $border-radius;
+  font-weight: bold;
+  height: $finger-size;
+  background-color: "#fff";
+}
+
 .button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   padding-left: 20px;
   padding-right: 20px;
-  height: $finger-size;
-  color: white;
-  font-weight: bold;
-  background-color: transparent;
-  border-radius: $border-radius;
+  text-align: center;
+  color:white;
+  background-color: $color-blue;
+
 
   &-icon {
     justify-content: center;
@@ -46,14 +57,78 @@ button {
     padding-left: 0;
     padding-right: 0;
     width: $finger-size;
+    background: transparent;
 
   }
 
-  &-blue {
-    color:white;
-    background-color: $color-blue;
+  &-full {
+    width: 100%;
+
   }
 
+  &-navy {
+    background-color: $color-navy;
+  }
+}
+
+.text {
+  min-height: $finger-size;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  &::placeholder-shown {
+    color: $color-navy;
+  }
+
+}
+
+.select {
+  display: inline-block;
+}
 
 
+
+.form-item {
+   position: relative;
+ .icon {
+   position: absolute;
+   left:10px;
+   top: 50%;
+   transform: translateY(-50%);
+   color:$color-navy;
+
+ }
+ .text {
+   padding-left: 40px;
+ }
+
+ .select {
+   padding-left: 40px;
+ }
+}
+
+
+.form-description {
+  margin-top: 8px;
+}
+
+.form-checkbox {
+  display: flex;
+}
+.checkbox {
+  position: relative;
+
+  &:before {
+    content: "";
+    font-size: 24px;
+    height: 1em;
+    width: 1em;
+    border: 2px solid white;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
 }

@@ -1,6 +1,7 @@
+$Header-height: 68px;
+
 .Header {
-  border-bottom: 1px solid #ddd;
-      height: 68px;
+  height: $Header-height;
 
   .container {
     position: relative;
@@ -32,10 +33,10 @@
     // transform: translateX(100%);
     transition: .2s;
     display: flex;
-    position: absolute;
+    position: fixed;
     left:0;
     right: 0;
-    top:100%;
+    top:$Header-height;
     background-color: #ccc;
     // display: flex;
     flex-direction: column;
@@ -55,6 +56,7 @@
 
 
     @include mq("tablet") {
+      pointer-events: auto;
       opacity: 1;
       transform: translateY(0);
       transition: 0;

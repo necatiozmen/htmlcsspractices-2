@@ -364,28 +364,79 @@ a {
 button {
   background-color: transparent; }
 
+.select, .button, .text {
+  border: 0;
+  width: 100%;
+  font-family: inherit;
+  border-radius: 2px;
+  font-weight: bold;
+  height: 40px;
+  background-color: "#fff"; }
+
 .button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   padding-left: 20px;
   padding-right: 20px;
-  height: 40px;
+  text-align: center;
   color: white;
-  font-weight: bold;
-  background-color: transparent;
-  border-radius: 2px; }
+  background-color: #01ACEE; }
   .button-icon {
     justify-content: center;
     color: black;
     padding-left: 0;
     padding-right: 0;
-    width: 40px; }
-  .button-blue {
-    color: white;
-    background-color: #01ACEE; }
+    width: 40px;
+    background: transparent; }
+  .button-full {
+    width: 100%; }
+  .button-navy {
+    background-color: #083887; }
+
+.text {
+  min-height: 40px;
+  padding-left: 10px;
+  padding-right: 10px; }
+  .text::placeholder-shown {
+    color: #083887; }
+
+.select {
+  display: inline-block; }
+
+.form-item {
+  position: relative; }
+  .form-item .icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #083887; }
+  .form-item .text {
+    padding-left: 40px; }
+  .form-item .select {
+    padding-left: 40px; }
+
+.form-description {
+  margin-top: 8px; }
+
+.form-checkbox {
+  display: flex; }
+
+.checkbox {
+  position: relative; }
+  .checkbox:before {
+    content: "";
+    font-size: 24px;
+    height: 1em;
+    width: 1em;
+    border: 2px solid white; }
+  .checkbox input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none; }
 
 .Header {
-  border-bottom: 1px solid #ddd;
   height: 68px; }
   .Header .container {
     position: relative;
@@ -406,10 +457,10 @@ button {
     opacity: 0;
     transition: .2s;
     display: flex;
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
-    top: 100%;
+    top: 68px;
     background-color: #ccc;
     flex-direction: column;
     background-color: white;
@@ -423,6 +474,7 @@ button {
       transition: .2s; }
     @media (min-width: 768px) {
       .Header-menu {
+        pointer-events: auto;
         opacity: 1;
         transform: translateY(0);
         transition: 0;
@@ -496,18 +548,21 @@ button {
     font-size: 0.9em; }
 
 .Showcase {
-  text-align: center;
   color: white;
-  padding-top: 100px;
+  padding-top: 30px;
   padding-bottom: 100px;
-  background-color: #083887; }
-  .Showcase .Search {
-    background-color: #FBBE00;
-    padding: 40px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); }
-    .Showcase .Search-form {
-      position: relative;
-      display: flex; }
-    .Showcase .Search .asd {
-      position: absolute;
-      right: 0; }
+  background: #083887 url(img/showcase_back.jpg) no-repeat center center/cover; }
+
+.Search {
+  margin-top: 30px;
+  background-color: #FBBE00;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); }
+  .Search-form {
+    position: relative;
+    display: flex;
+    flex-direction: column; }
+    .Search-form-item + .Search-form-item {
+      margin-top: 20px; }
+  .Search .for-work {
+    margin-top: 10px; }
