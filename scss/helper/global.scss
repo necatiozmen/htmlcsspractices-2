@@ -1,3 +1,8 @@
+body {
+  overflow-x: hidden;
+  font-family: $font-family;
+}
+
 .container {
   max-width: $max-width;
   margin-left: auto;
@@ -13,26 +18,117 @@ a {
 
 .icon {
   display: inline-block;
-  width: 1em;
-  height: 1em;
+  width: 24px;
+  height: 24px;
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;
 }
 
-body {
-  font-family: $font-family;
+button {
+  background-color: transparent;
+}
+
+
+.select, .button, .text {
+  border:0;
+  width: 100%;
+  font-family: inherit;
+  border-radius: $border-radius;
+  font-weight: bold;
+  height: $finger-size;
+  background-color: "#fff";
 }
 
 .button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   padding-left: 20px;
   padding-right: 20px;
-  height: $finger-size;
-  color: white;
-  font-weight: bold;
+  text-align: center;
+  color:white;
   background-color: $color-blue;
-  border-radius: $border-radius;
 
+
+  &-icon {
+    justify-content: center;
+    color:black;
+    padding-left: 0;
+    padding-right: 0;
+    width: $finger-size;
+    background: transparent;
+
+  }
+
+  &-full {
+    width: 100%;
+
+  }
+
+  &-navy {
+    background-color: $color-navy;
+  }
+}
+
+.text {
+  min-height: $finger-size;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  &::placeholder-shown {
+    color: $color-navy;
+  }
+
+}
+
+.select {
+  display: inline-block;
+}
+
+
+
+.form-item {
+   position: relative;
+ .icon {
+   position: absolute;
+   left:10px;
+   top: 50%;
+   transform: translateY(-50%);
+   color:$color-navy;
+
+ }
+ .text {
+   padding-left: 40px;
+ }
+
+ .select {
+   padding-left: 40px;
+ }
+}
+
+
+.form-description {
+  margin-top: 8px;
+}
+
+.form-checkbox {
+  display: flex;
+}
+.checkbox {
+  position: relative;
+
+  &:before {
+    content: "";
+    font-size: 24px;
+    height: 1em;
+    width: 1em;
+    border: 2px solid white;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
 }
